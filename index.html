@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pantauan Tender</title>
+<script>
+  (function () {
+    var d = document.documentElement;
+    function pref() { try { return localStorage.getItem('elitech_theme') || 'auto'; } catch (e) { return 'auto'; } }
+    function resolve(p) { return p === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : p; }
+    window.__setTheme = function (t) { d.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light'); };
+    d.setAttribute('data-theme', resolve(pref()) === 'dark' ? 'dark' : 'light');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="topLoader"></div>
+<div class="wrap">
+  <div class="head">
+    <div>
+      <h1>Pantauan Tender</h1>
+      <p class="sub" id="stamp"></p>
+    </div>
+    <button class="themebtn" id="btnTema" type="button" aria-label="Ganti mode gelap/terang" title="Ganti mode gelap/terang">
+      <svg class="ic ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="ic ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+
+  <form class="filters" id="filters" aria-label="Filter data" onsubmit="return false">
+    <div class="frow">
+      <div class="fld"><label for="f-prov">Provinsi</label><select id="f-prov"></select></div>
+      <div class="fld"><label for="f-produk">Produk</label><select id="f-produk"></select></div>
+      <div class="fld"><label for="f-tahun">Tahun penawaran dibuka</label><select id="f-tahun"></select></div>
+      <div class="fld"><button type="button" id="f-reset" class="btn">Reset filter</button></div>
+    </div>
+    <div class="now"><span id="f-count" aria-live="polite"></span></div>
+  </form>
+
+  <nav class="tabs" role="tablist" aria-label="Halaman">
+    <button role="tab" id="tab-ringkasan" class="on" aria-selected="true" aria-controls="view" data-tab="ringkasan" type="button">Ringkasan</button>
+    <button role="tab" id="tab-analisis" aria-selected="false" aria-controls="view" data-tab="analisis" type="button">Di mana kita menang</button>
+    <button role="tab" id="tab-tindak" aria-selected="false" aria-controls="view" data-tab="tindak" type="button">Tindak lanjut</button>
+  </nav>
+
+  <div id="view" role="tabpanel" tabindex="-1"></div>
+  <p class="foot" id="foot"></p>
+</div>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

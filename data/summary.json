@@ -1,0 +1,1463 @@
+{
+ "catatan_versi": {
+  "baris_semua_versi": 271,
+  "baris_versi_terakhir": 266,
+  "id_dengan_versi": 4,
+  "baris_tanpa_id": 2,
+  "hitung_versi_terakhir_saja": true
+ },
+ "dibuat": "2026-11-11 15:35",
+ "kpi": {
+  "total_tender": 266,
+  "menang": 19,
+  "kalah": 73,
+  "win_rate_pct": 20.7,
+  "berjalan": 45,
+  "gugur_tanpa_bersaing": 129,
+  "gugur_pct": 48.5,
+  "nilai_menang_rp": 3902503590.0,
+  "nilai_pipeline_rp": 45992285260.0
+ },
+ "corong_tahap": [
+  {
+   "tahap": "KALAH",
+   "n": 72
+  },
+  {
+   "tahap": "BATAL",
+   "n": 69
+  },
+  {
+   "tahap": "TERLEWAT",
+   "n": 39
+  },
+  {
+   "tahap": "DIEVALUASI",
+   "n": 28
+  },
+  {
+   "tahap": "SELESAI",
+   "n": 19
+  },
+  {
+   "tahap": "TIDAK SUBMIT",
+   "n": 18
+  },
+  {
+   "tahap": "SUBMITTED",
+   "n": 14
+  },
+  {
+   "tahap": "OPEN",
+   "n": 3
+  },
+  {
+   "tahap": "DITUTUP",
+   "n": 3
+  },
+  {
+   "tahap": "DITOLAK",
+   "n": 1
+  }
+ ],
+ "per_produk": [
+  {
+   "produk": "Patient Monitor",
+   "total": 25.0,
+   "menang": 0.0,
+   "kalah": 5.0,
+   "berjalan": 5.0,
+   "gugur": 15.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Syringe Pump",
+   "total": 17.0,
+   "menang": 1.0,
+   "kalah": 10.0,
+   "berjalan": 3.0,
+   "gugur": 3.0,
+   "win_rate_pct": 9.1
+  },
+  {
+   "produk": "Usg",
+   "total": 17.0,
+   "menang": 0.0,
+   "kalah": 8.0,
+   "berjalan": 1.0,
+   "gugur": 8.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Fetal Doppler",
+   "total": 14.0,
+   "menang": 2.0,
+   "kalah": 0.0,
+   "berjalan": 2.0,
+   "gugur": 10.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "produk": "Infusion Pump",
+   "total": 13.0,
+   "menang": 0.0,
+   "kalah": 8.0,
+   "berjalan": 5.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Ecg",
+   "total": 13.0,
+   "menang": 2.0,
+   "kalah": 3.0,
+   "berjalan": 3.0,
+   "gugur": 5.0,
+   "win_rate_pct": 40.0
+  },
+  {
+   "produk": "Incubator",
+   "total": 12.0,
+   "menang": 1.0,
+   "kalah": 4.0,
+   "berjalan": 2.0,
+   "gugur": 5.0,
+   "win_rate_pct": 20.0
+  },
+  {
+   "produk": "Suction Pump",
+   "total": 12.0,
+   "menang": 1.0,
+   "kalah": 6.0,
+   "berjalan": 0.0,
+   "gugur": 5.0,
+   "win_rate_pct": 14.3
+  },
+  {
+   "produk": "Kalibrasi",
+   "total": 9.0,
+   "menang": 0.0,
+   "kalah": 4.0,
+   "berjalan": 0.0,
+   "gugur": 5.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Operating Lamp",
+   "total": 9.0,
+   "menang": 0.0,
+   "kalah": 3.0,
+   "berjalan": 1.0,
+   "gugur": 5.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Dental Unit",
+   "total": 9.0,
+   "menang": 0.0,
+   "kalah": 4.0,
+   "berjalan": 2.0,
+   "gugur": 3.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Infant Warmer",
+   "total": 7.0,
+   "menang": 2.0,
+   "kalah": 1.0,
+   "berjalan": 1.0,
+   "gugur": 3.0,
+   "win_rate_pct": 66.7
+  },
+  {
+   "produk": "Photo Therapy",
+   "total": 6.0,
+   "menang": 0.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 4.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Nebulizer",
+   "total": 6.0,
+   "menang": 3.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 3.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "produk": "Timbangan",
+   "total": 4.0,
+   "menang": 1.0,
+   "kalah": 1.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": 50.0
+  },
+  {
+   "produk": "Sterillisator",
+   "total": 4.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 3.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Treadmill",
+   "total": 4.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 4.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Pulse Oximeter",
+   "total": 4.0,
+   "menang": 2.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "produk": "Fetal Monitor",
+   "total": 3.0,
+   "menang": 1.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 50.0
+  },
+  {
+   "produk": "Incubator Transport",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 2.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Patient Monitor - 9 Parameter",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 2.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Antropometri",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Resusitator",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 3.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Timbangan Baby",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Phototherapy",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Film Viewer",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Electrocrdiograph",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Usg 3D",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Bedside Monitor",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Pulse Oxymeter",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Surgical Lamp",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Ctg",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Bpm",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Bedside Monitor Igd",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Baby Incubator",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Antropometri Kit",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Ecg + Treadmill",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Ecg Holter",
+   "total": 1.0,
+   "menang": 1.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "produk": "Film Viewer Double",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Plasma Sterilzer",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Patient Monitor (Neonate, Pediatric, Adult)",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Patient Monitor - 5 Parameter",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Neonatal Phototherapy",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Monitor Invasive",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Lampu Operasi 2 Ceilling",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Oksigen Concentrator",
+   "total": 1.0,
+   "menang": 1.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "produk": "Incubator Bayi",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Echocardiography",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Ekg 12 Channel",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Suction Pump Bedah",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Spirometer",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Suction Pump Mobile",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Spirometri",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Sanitarian Kit",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Resuscicator",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Timbangan Bayi Digital",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Tidak Ada Produk Yg Sesuai",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Suction Pump Portable",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Timbangan Berat Dan Tinggi Badan",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Timbangan Digital Bayi",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Timbangan Digital Bmi",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Timbangan Dan Alat Ukur Tinggi Badan",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Timbangan Bmi",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Ultrasonography",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Timbangan Digital Dan Alat Ukur Tnggi Badan",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Usg 2D",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Usg 4D",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Vital Sign",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "produk": "Vital Sign Monitor",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "Warmer",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "produk": "X-Ray Film",
+   "total": 1.0,
+   "menang": 1.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 100.0
+  }
+ ],
+ "per_provinsi": [
+  {
+   "provinsi": "JAWA TIMUR",
+   "total": 99.0,
+   "menang": 6.0,
+   "kalah": 22.0,
+   "berjalan": 17.0,
+   "gugur": 54.0,
+   "win_rate_pct": 21.4
+  },
+  {
+   "provinsi": "DKI JAKARTA",
+   "total": 52.0,
+   "menang": 6.0,
+   "kalah": 14.0,
+   "berjalan": 0.0,
+   "gugur": 32.0,
+   "win_rate_pct": 30.0
+  },
+  {
+   "provinsi": "RIAU",
+   "total": 31.0,
+   "menang": 3.0,
+   "kalah": 10.0,
+   "berjalan": 2.0,
+   "gugur": 16.0,
+   "win_rate_pct": 23.1
+  },
+  {
+   "provinsi": "ACEH",
+   "total": 16.0,
+   "menang": 0.0,
+   "kalah": 6.0,
+   "berjalan": 6.0,
+   "gugur": 4.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "provinsi": "JAWA TENGAH",
+   "total": 14.0,
+   "menang": 1.0,
+   "kalah": 3.0,
+   "berjalan": 3.0,
+   "gugur": 7.0,
+   "win_rate_pct": 25.0
+  },
+  {
+   "provinsi": "MALUKU",
+   "total": 10.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 7.0,
+   "gugur": 3.0,
+   "win_rate_pct": null
+  },
+  {
+   "provinsi": "SULAWESI UTARA",
+   "total": 6.0,
+   "menang": 0.0,
+   "kalah": 5.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "provinsi": "KALIMANTAN TIMUR",
+   "total": 6.0,
+   "menang": 1.0,
+   "kalah": 3.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": 25.0
+  },
+  {
+   "provinsi": "BANTEN",
+   "total": 5.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 3.0,
+   "gugur": 2.0,
+   "win_rate_pct": null
+  },
+  {
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "total": 5.0,
+   "menang": 0.0,
+   "kalah": 3.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "provinsi": "TANGERANG",
+   "total": 5.0,
+   "menang": 1.0,
+   "kalah": 2.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": 33.3
+  },
+  {
+   "provinsi": "MALUKU UTARA",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 2.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "provinsi": "KEPULAUAN RIAU",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "provinsi": "JAWA BARAT",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 2.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "provinsi": "JAMBI",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "provinsi": "NTT",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "provinsi": "NTB",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "provinsi": "SULAWESI SELATAN",
+   "total": 1.0,
+   "menang": 1.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "provinsi": "PEKANBARU",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "provinsi": "SUMATERA BARAT",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "provinsi": "SUMATERA SELATAN",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  }
+ ],
+ "per_instansi": [
+  {
+   "instansi": "Kementerian Kesehatan",
+   "total": 116.0,
+   "menang": 7.0,
+   "kalah": 34.0,
+   "berjalan": 18.0,
+   "gugur": 57.0,
+   "win_rate_pct": 17.1
+  },
+  {
+   "instansi": "Provinsi Jawa Timur",
+   "total": 31.0,
+   "menang": 1.0,
+   "kalah": 11.0,
+   "berjalan": 3.0,
+   "gugur": 16.0,
+   "win_rate_pct": 8.3
+  },
+  {
+   "instansi": "Kota Surabaya",
+   "total": 26.0,
+   "menang": 3.0,
+   "kalah": 0.0,
+   "berjalan": 3.0,
+   "gugur": 20.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "instansi": "Kab. Sidoarjo",
+   "total": 21.0,
+   "menang": 1.0,
+   "kalah": 2.0,
+   "berjalan": 10.0,
+   "gugur": 8.0,
+   "win_rate_pct": 33.3
+  },
+  {
+   "instansi": "Provinsi DKI Jakarta",
+   "total": 7.0,
+   "menang": 2.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 3.0,
+   "win_rate_pct": 50.0
+  },
+  {
+   "instansi": "Kab. Purworejo",
+   "total": 6.0,
+   "menang": 0.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 4.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kab. Kutai Timur",
+   "total": 4.0,
+   "menang": 1.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 33.3
+  },
+  {
+   "instansi": "Kab. Tangerang",
+   "total": 4.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 2.0,
+   "gugur": 2.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kota Tangerang",
+   "total": 4.0,
+   "menang": 1.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 33.3
+  },
+  {
+   "instansi": "RSUD TANJUNG PRIOK",
+   "total": 3.0,
+   "menang": 1.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 50.0
+  },
+  {
+   "instansi": "Kota Salatiga",
+   "total": 3.0,
+   "menang": 1.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "instansi": "Kepolisian Negara Republik Indonesia",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kab. Banyumas",
+   "total": 3.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kab. Bojonegoro",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kab. Jombang",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kota Batu",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kab. Kepulauan Sangihe",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 2.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kab. Pati",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kab. Lumajang",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kab. Banyuwangi",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kab. Probolinggo",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kab. Gresik",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kab. Kepulauan Tanimbar",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kab. Trenggalek",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Kota Batam",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Kota Bogor",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Provinsi Kalimantan Timur",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Provinsi Nusa Tenggara Barat",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "Provinsi Sumatera Selatan",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "instansi": "Provisi Jawa Timur",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "instansi": "RS PARU MANGUHARJO",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  }
+ ],
+ "per_kategori": [
+  {
+   "kategori": "Peralatan RSUP Terapetik",
+   "total": 61.0,
+   "menang": 4.0,
+   "kalah": 26.0,
+   "berjalan": 13.0,
+   "gugur": 18.0,
+   "win_rate_pct": 13.3
+  },
+  {
+   "kategori": "Peralatan Kardiologi Pemantauan",
+   "total": 46.0,
+   "menang": 5.0,
+   "kalah": 8.0,
+   "berjalan": 11.0,
+   "gugur": 22.0,
+   "win_rate_pct": 38.5
+  },
+  {
+   "kategori": "Peralatan Radiologi Diagnostik",
+   "total": 29.0,
+   "menang": 1.0,
+   "kalah": 9.0,
+   "berjalan": 3.0,
+   "gugur": 16.0,
+   "win_rate_pct": 10.0
+  },
+  {
+   "kategori": "Peralatan Bedah",
+   "total": 26.0,
+   "menang": 1.0,
+   "kalah": 10.0,
+   "berjalan": 5.0,
+   "gugur": 10.0,
+   "win_rate_pct": 9.1
+  },
+  {
+   "kategori": "Peralatan Obstetrik dan Ginekologi Pemantauan",
+   "total": 18.0,
+   "menang": 3.0,
+   "kalah": 1.0,
+   "berjalan": 2.0,
+   "gugur": 12.0,
+   "win_rate_pct": 75.0
+  },
+  {
+   "kategori": "Peralatan Kardiologi Diagnostik",
+   "total": 17.0,
+   "menang": 0.0,
+   "kalah": 6.0,
+   "berjalan": 3.0,
+   "gugur": 8.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "kategori": "Peralatan RSUP Pemantauan",
+   "total": 16.0,
+   "menang": 1.0,
+   "kalah": 2.0,
+   "berjalan": 4.0,
+   "gugur": 9.0,
+   "win_rate_pct": 33.3
+  },
+  {
+   "kategori": "Peralatan Anestesi Terapetik",
+   "total": 9.0,
+   "menang": 4.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 5.0,
+   "win_rate_pct": 100.0
+  },
+  {
+   "kategori": "Peralatan RSUP Lainnya",
+   "total": 9.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 8.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "kategori": "Peralatan Gigi Lainnya",
+   "total": 9.0,
+   "menang": 0.0,
+   "kalah": 4.0,
+   "berjalan": 2.0,
+   "gugur": 3.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "kategori": "Jasa Kalibrasi Alat Kesehatan",
+   "total": 6.0,
+   "menang": 0.0,
+   "kalah": 4.0,
+   "berjalan": 0.0,
+   "gugur": 2.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "kategori": "Peralatan Anestesi Diagnostik",
+   "total": 2.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 1.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "kategori": "Belanja Alat Kesehatan Unit Endoskopi (Vital Sign Monitor & Infusion Pump)",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 1.0,
+   "berjalan": 0.0,
+   "gugur": 0.0,
+   "win_rate_pct": 0.0
+  },
+  {
+   "kategori": "Alat Ukur Panjang",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "kategori": "Alat Laboratorium Pengujian Lainnya",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "kategori": "Peralatan Kardiologi Terapetik",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "kategori": "Peralatan Kesehatan Fisik Terapetik",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "kategori": "Peralatan RSUP PemantauanV",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "kategori": "Peralatan RSUP TerapetikV",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  },
+  {
+   "kategori": "Sarana dan Penunjang Laboratorium Lainnya",
+   "total": 1.0,
+   "menang": 0.0,
+   "kalah": 0.0,
+   "berjalan": 0.0,
+   "gugur": 1.0,
+   "win_rate_pct": null
+  }
+ ],
+ "per_merk": [
+  {
+   "merk": "ELITECH",
+   "total": 162.0,
+   "menang": 17.0,
+   "kalah": 67.0,
+   "berjalan": 40.0,
+   "gugur": 38.0,
+   "win_rate_pct": 20.2
+  }
+ ],
+ "gap_harga_menang_vs_kalah": [
+  {
+   "kelompok": "Kalah",
+   "count": 67,
+   "median": -6.0,
+   "mean": -11.0
+  },
+  {
+   "kelompok": "Menang",
+   "count": 19,
+   "median": -11.0,
+   "mean": -10.1
+  }
+ ],
+ "per_bulan": [
+  {
+   "bulan": "2025-09",
+   "n": 1
+  },
+  {
+   "bulan": "2025-10",
+   "n": 3
+  },
+  {
+   "bulan": "2025-11",
+   "n": 12
+  },
+  {
+   "bulan": "2025-12",
+   "n": 27
+  },
+  {
+   "bulan": "2026-03",
+   "n": 1
+  },
+  {
+   "bulan": "2026-04",
+   "n": 20
+  },
+  {
+   "bulan": "2026-05",
+   "n": 26
+  },
+  {
+   "bulan": "2026-06",
+   "n": 6
+  },
+  {
+   "bulan": "2026-07",
+   "n": 22
+  },
+  {
+   "bulan": "2026-08",
+   "n": 16
+  },
+  {
+   "bulan": "2026-09",
+   "n": 20
+  },
+  {
+   "bulan": "2026-10",
+   "n": 54
+  },
+  {
+   "bulan": "2026-11",
+   "n": 52
+  },
+  {
+   "bulan": "2026-12",
+   "n": 1
+  }
+ ],
+ "kualitas_data": {
+  "tgl_buka_tahun_tidak_wajar": [
+   "MC-01M65CDDMNJV2GNDFF7BADN9Q4"
+  ],
+  "tgl_selesai_tahun_tidak_wajar": [
+   "MC-01M65CDDMNJV2GNDFF7BADN9Q4",
+   "MC-01M5Y4V8BVKASW9MKF5C0KEMQD",
+   "MC-01KYM839SCGE399M6E7MTSRMJ8"
+  ],
+  "tgl_penyelesaian_tahun_tidak_wajar": [
+   "MC-01M6NESVP70KK9CSFVXD1HPWE5",
+   "MC-01M6NESVP70KK9CSFVXD1HPWE5",
+   "MC-01M6NESVP70KK9CSFVXD1HPWE5",
+   "MC-01M6NERA9QXER1NX3QS2YXQJHB",
+   "MC-01M6NERA9QXER1NX3QS2YXQJHB",
+   "MC-01M2JJB0XECS0YYRY6Y31HD723"
+  ],
+  "baris_tanpa_id": 2,
+  "tanpa_provinsi": 0,
+  "tanpa_harga_sph": 103,
+  "tanpa_pagu": 28
+ }
+}
