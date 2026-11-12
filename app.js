@@ -33,7 +33,7 @@ async function load() {
     const r = await fetch('data/tender.json', { cache: 'no-cache' });
     if (!r.ok) throw new Error('tender.json ' + r.status);
     ALL = (await r.json()).filter(o => o.versi_terakhir !== false);
-    ALL.forEach(o => { o._k = KMAP[o.kelompok] || 'gugur'; });
+    ALL.forEach((o, i) => { o._i = i; o._k = KMAP[o.kelompok] || 'gugur'; o.sumber = o.sumber || 'minkom'; });
     try { const s = await fetch('data/summary.json', { cache: 'no-cache' }); if (s.ok) SUM = await s.json(); } catch (e) { /* opsional */ }
   } catch (e) {
     $('#view').innerHTML = '<p>Data tidak bisa dimuat (' + esc(e.message) + '). Pastikan file <code>data/tender.json</code> ada di repo dan halaman dibuka lewat GitHub Pages atau server lokal, bukan langsung dari file.</p>';
@@ -43,8 +43,8 @@ async function load() {
 }
 
 function filtered() {
-  const { prov, produk, tahun } = S.F;
-  return ALL.filter(o => (!prov || o.provinsi === prov) && (!produk || o.produk === produk) &&
+  const { prov, produk, tahun, sumber } = S.F;
+  return ALL.filter(o => (!sumber || o.sumber === sumber) && (!prov || o.provinsi === prov) && (!produk || o.produk === produk) &&
     (!tahun || (o.tgl_buka && o.tgl_buka.slice(0, 4) === tahun)));
 }
 
@@ -205,12 +205,93 @@ function viewTindak(rows) {
   return h;
 }
 
+// ---------- rincian: barang menang, penyebab gagal, daftar per tender ----------
+const SRC = { minkom: 'Minkom', tender: 'Tender' };
+const srcTag = o => '<span class="src ' + esc(o.sumber) + '">' + esc(SRC[o.sumber] || o.sumber) + '</span>';
+const alasanDari = o => o.alasan_manual || o.alasan_otomatis;
+const mrp = v => v == null ? null : rp(v);
+
+function aggRincian(list, keyFn) {
+  const m = new Map();
+  list.forEach(o => {
+    const k = keyFn(o) || '(belum diisi)', b = o.barang || o.produk || '–';
+    if (!m.has(k)) m.set(k, { k, n: 0, qty: 0, pagu: 0, nilai: 0, items: {} });
+    const g = m.get(k);
+    g.n++; g.qty += o.qty || 0; g.pagu += o.pagu_total || 0; g.nilai += o.total_sph_inc || 0; g.items[b] = (g.items[b] || 0) + 1;
+  });
+  return [...m.values()];
+}
+
+function detailTender(o) {
+  const tg = s => s ? fmtD(parseD(s)) : null;
+  const rows = [
+    ['ID', esc(o.no_kompetisi)], ['Judul', esc(o.judul_kompetisi)], ['Program', esc(o.program)], ['Agenda', esc(o.agenda)],
+    ['Kategori', esc(o.kategori)], ['Merk / produk', esc([o.merk, o.nama_produk, o.tipe_produk].filter(Boolean).join(' · '))],
+    ['Tipe diminta', esc(o.tipe)], ['Pagu total', mrp(o.pagu_total)], ['Pagu per unit (exc PPN)', mrp(o.pagu_unit_exc)],
+    ['Harga Inaproc per unit (exc)', mrp(o.harga_inaproc_exc)], ['Harga SPH per unit (exc)', mrp(o.harga_sph_unit_exc)],
+    ['Total SPH (inc PPN)', mrp(o.total_sph_inc)], ['SPH dibanding pagu total', o.gap_total_pct == null ? null : pct(o.gap_total_pct)],
+    ['Status SPH', esc(o.status_sph)],
+    ['Penawaran', o.tgl_buka ? tg(o.tgl_buka) + ' sampai ' + (tg(o.tgl_selesai) || '–') : null],
+    ['Penyelesaian / pengiriman', tg(o.tgl_penyelesaian)],
+    ['Syarat omzet (AATO)', mrp(o.syarat_aato_idr)],
+    ['Syarat pengalaman penjualan', o.syarat_pengalaman != null ? nf.format(o.syarat_pengalaman) + ' unit dalam 7 tahun' : null],
+    ['Instansi', esc(o.instansi)], ['Alamat', esc(o.alamat)],
+    ['Alasan (diisi manual)', esc(o.alasan_manual)], ['Indikasi dari data', esc(o.alasan_otomatis)]
+  ].filter(p => p[1]);
+  return '<dl class="dl">' + rows.map(p => '<dt>' + p[0] + '</dt><dd>' + p[1] + '</dd>').join('') + '</dl>';
+}
+
+function viewRincian(rows) {
+  if (!rows.length) return '<p class="muted" style="padding:30px 0">Tidak ada tender dengan filter ini.</p>';
+  const menang = rows.filter(o => o._k === 'menang'), gagal = rows.filter(o => o._k === 'kalah' || o._k === 'gugur');
+  const nilai = sumBy(menang, o => o.total_sph_inc), paguM = sumBy(menang, o => o.pagu_total);
+  const top = g => Object.entries(g.items).sort((a, b) => b[1] - a[1]).slice(0, 3).map(e => esc(e[0]) + ' <span class="muted">(' + e[1] + ')</span>').join(', ');
+  const A = aggRincian(menang, o => o.barang).sort((a, b) => b.nilai - a.nilai);
+  const B = aggRincian(gagal, alasanDari).sort((a, b) => b.n - a.n || b.pagu - a.pagu);
+
+  let h = '<div class="kpis">' +
+    kpi('Pendapatan dari tender menang', rp(nilai), menang.length + ' tender, total SPH termasuk PPN') +
+    kpi('Pagu tender yang dimenangkan', rp(paguM), paguM && nilai ? 'Selisih ke pagu ' + pct((nilai / paguM - 1) * 100) : '') +
+    kpi('Unit yang dimenangkan', nf.format(sumBy(menang, o => o.qty)), 'dari ' + A.length + ' jenis barang') +
+    kpi('Pagu yang lepas (kalah dan gugur)', rp(sumBy(gagal, o => o.pagu_total)), gagal.length + ' tender') + '</div>';
+
+  h += '<section class="panel"><h2>Barang yang menang</h2><p class="sub">Dikelompokkan per tipe produk. Pendapatan = total SPH (termasuk PPN) dari tender berstatus SELESAI.</p>' +
+    (A.length ? '<div class="tw"><table><thead><tr><th>Barang</th><th class="r">Tender</th><th class="r">Unit</th><th class="r">Pagu total</th><th class="r">Pendapatan</th><th class="r">Selisih ke pagu</th></tr></thead><tbody>' +
+      A.map(g => '<tr><td class="pk">' + esc(g.k) + '</td><td class="r">' + g.n + '</td><td class="r">' + nf.format(g.qty) + '</td><td class="r">' + rp(g.pagu) + '</td><td class="r">' + rp(g.nilai) + '</td><td class="r">' + (g.pagu && g.nilai ? pct((g.nilai / g.pagu - 1) * 100) : '–') + '</td></tr>').join('') +
+      '</tbody></table></div>' : '<p class="muted">Belum ada tender menang dengan filter ini.</p>') + '</section>';
+
+  h += '<section class="panel"><h2>Yang gagal dan kenapa</h2><p class="sub">Penyebab diambil dari kolom ALASAN di sheet bila diisi. Bila kosong, ini <b>indikasi</b> dari tahap, status SPH, dan selisih harga terhadap pagu, bukan alasan resmi dari pemilik tender.</p>' +
+    (B.length ? '<div class="tw"><table><thead><tr><th>Penyebab</th><th class="r">Tender</th><th class="r">Unit</th><th class="r">Pagu yang lepas</th><th>Barang terbanyak</th></tr></thead><tbody>' +
+      B.map(g => '<tr><td class="pk">' + esc(g.k) + '</td><td class="r">' + g.n + '</td><td class="r">' + nf.format(g.qty) + '</td><td class="r">' + rp(g.pagu) + '</td><td class="pk">' + top(g) + '</td></tr>').join('') +
+      '</tbody></table></div>' : '<p class="muted">Tidak ada tender kalah atau gugur dengan filter ini.</p>') + '</section>';
+
+  const f = S.sort.rk || '', all = !!S.expand.rall;
+  const list = rows.filter(o => !f || o._k === f).sort((a, b) => (b.tgl_buka || '').localeCompare(a.tgl_buka || ''));
+  const shown = all ? list : list.slice(0, 60);
+  h += '<section class="panel"><h2>Daftar rinci per tender</h2><p class="sub">Klik baris untuk melihat rincian lengkapnya.</p>' +
+    '<div class="ctl">Tampilkan: <span class="seg" role="group" aria-label="Hasil">' +
+    [['', 'Semua'], ['menang', 'Menang'], ['kalah', 'Kalah'], ['gugur', 'Gugur'], ['berjalan', 'Berjalan']].map(([v, l]) =>
+      '<button type="button" data-act="sort" data-id="rk" data-v="' + v + '" aria-pressed="' + (f === v) + '">' + l + '</button>').join('') + '</span></div>' +
+    '<div class="tw"><table><thead><tr><th>Sumber</th><th>Hasil</th><th>Barang</th><th>Instansi / provinsi</th><th class="r">Unit</th><th class="r">Pagu total</th><th class="r">Nilai SPH</th><th class="r">Dibanding pagu</th><th>Penyebab (jika gagal)</th></tr></thead><tbody>' +
+    (shown.length ? shown.map(o => {
+      const open = !!S.expand['r' + o._i];
+      return '<tr data-act="expand" data-id="r' + o._i + '"><td>' + srcTag(o) + '</td><td><span class="st"><span class="sw ' + o._k + '"></span>' + esc((o.tahap || '').charAt(0) + (o.tahap || '').slice(1).toLowerCase()) + '</span></td>' +
+        '<td class="pk">' + esc(o.barang || o.produk || '–') + '</td><td class="pk">' + esc(o.instansi || o.program || '–') + (o.provinsi ? '<span class="muted" style="display:block">' + esc(o.provinsi) + '</span>' : '') + '</td>' +
+        '<td class="r">' + (o.qty != null ? nf.format(o.qty) : '–') + '</td><td class="r">' + rp(o.pagu_total) + '</td><td class="r">' + rp(o.total_sph_inc) + '</td>' +
+        '<td class="r">' + (o.gap_total_pct == null ? '–' : pct(o.gap_total_pct)) + '</td><td class="pk">' + esc(alasanDari(o) || '') + '</td></tr>' +
+        (open ? '<tr class="det"><td colspan="9">' + detailTender(o) + '</td></tr>' : '');
+    }).join('') : '<tr><td colspan="9" class="muted">Tidak ada tender yang cocok.</td></tr>') + '</tbody></table></div>' +
+    (list.length > 60 ? '<button type="button" class="link more" data-act="expand" data-id="rall">' + (all ? 'Tampilkan lebih sedikit' : 'Tampilkan semua (' + list.length + ')') + '</button>' : '') + '</section>';
+  return h;
+}
+  
 // ---------- render ----------
 let animT = null;
 function render(anim) {
   const rows = filtered();
-  $('#f-count').textContent = rows.length + ' tender (versi terakhir)';
-  $('#view').innerHTML = S.tab === 'analisis' ? viewAnalisis(rows) : S.tab === 'tindak' ? viewTindak(rows) : viewRingkasan(rows);
+  const nt = rows.filter(o => o.sumber === 'tender').length;
+  $('#f-count').textContent = (rows.length - nt) + ' minkom + ' + nt + ' tender (versi terakhir)';
+  $('#view').innerHTML = S.tab === 'analisis' ? viewAnalisis(rows) : S.tab === 'tindak' ? viewTindak(rows) : S.tab === 'rincian' ? viewRincian(rows) : viewRingkasan(rows);
   document.querySelectorAll('.tabs button').forEach(b => { const on = b.dataset.tab === S.tab; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
   $('#view').setAttribute('aria-labelledby', 'tab-' + S.tab);
   if (anim) { const v = $('#view'); v.classList.add('anim'); clearTimeout(animT); animT = setTimeout(() => v.classList.remove('anim'), 2400); }
@@ -222,6 +303,9 @@ function fillFilters() {
   opt('#f-prov', cnt('provinsi').sort(), 'Semua provinsi');
   opt('#f-produk', cnt('produk'), 'Semua produk');
   opt('#f-tahun', [...new Set(ALL.map(o => o.tgl_buka && o.tgl_buka.slice(0, 4)).filter(Boolean))].sort(), 'Semua tahun');
+  $('#f-sumber').innerHTML = '<option value="">Semua sumber</option><option value="minkom">Minkom</option><option value="tender">Tender</option>';
+  $('#f-sumber').addEventListener('change', e => { S.F.sumber = e.target.value; render(); });
+  $('#f-reset').addEventListener('click', () => { $('#f-sumber').value = ''; S.F.sumber = ''; });
 }
 
 function init() {
